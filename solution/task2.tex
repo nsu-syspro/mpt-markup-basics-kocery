@@ -7,12 +7,12 @@
 
 \makeatletter
 \renewcommand{\section}{\@startsection
-{section}%
-{2}%
-{0mm}%
-{-\baselineskip}%
-{0.5\baselineskip}%
-{\normalfont\large\bfseries}}
+	{section}%
+	{2}%
+	{0mm}%
+	{-\baselineskip}%
+	{0.5\baselineskip}%
+	{\normalfont\large\bfseries}}
 \makeatother
 
 \setcounter{page}{139}
@@ -21,8 +21,8 @@
 \newcounter{nrazd}
 \setcounter{nrazd}{0}
 \newcommand{\razd}[1]{\addtocounter{nrazd}{1}
-\setcounter{equation}{0}
-\textbf{\thenrazd. #1}}
+	\setcounter{equation}{0}
+	\textbf{\thenrazd. #1}}
 
 \setcounter{equation}{-2}
 \renewcommand{\theequation}{\thenrazd.\arabic{equation}}
@@ -31,197 +31,86 @@
 \renewcommand{\thesection}{\S\ \arabic{section}.}
 \newcommand{\bm}[1]{\mbox{\boldmath{\(#1\)}}}
 
-\newtheorem{lemma}{\hspace{\parindent}Лемма}
-\newtheorem{lemman}{\hspace{\parindent}Лемма}
-\renewcommand{\thelemma}{\!\!.}
-\renewcommand{\thelemman}{\arabic{lemman}.}
 
-\newtheorem{theorema}{\hspace{\parindent}Теорема}
-\newtheorem{theoreman}{\hspace{\parindent}Теорема}
-\renewcommand{\thetheorema}{\!\!.}
-\renewcommand{\thetheoreman}{\arabic{theoreman}.}
-\fancyhead[R]{Это простой пример верхнего колонтитула}
 \begin{document}
-\fancyhead[L]{\thepage}
-\fancyhead[C]{\footnotesize ГЛ. III. ОСНОВНЫЕ ГРУППЫ КОНКРЕТНЫХ СИСТЕМ УРАВНЕНИЙ}
-\fancyhead[R]{Это простой пример верхнего колонтитула}
+	\razd{Определяющие уравнения.} Для координат оператора, допускаемого
+	системой (1.1), также вводятся индивидуальные обозначения, а именно
 
-Здесь должен быть Ваш текст. Ниже примеры,
-которые могут Вам потребоваться. Потом удалить!
+	\begin{equation} \label{eq2.1}
+		\zeta\cdot\partial=\xi^a \partial_a + \eta^i \partial_{u^i} + \sigma\partial_p + \tau\partial_\rho,
+	\end{equation}
 
-Для заголовка параграфа использовать команду:
+	\noindent где все $\xi^a, \eta^i, \sigma, \tau$ есть искомые отображения $\bm{X \times Y\rightarrow R}$.
 
-\section{Обыкновенные дифференциальные уравнения}
-В строке \verb"\setcounter{section}{7}"
-вместо <<7>> поставить число на единицу меньшее номера параграфа
-из Вашего фрагмента текста.
+	Применение изложенного в 5.8 алгоритма перехода $E \rightarrow DE$
+	никаких принципиальных затруднений не встречает. Так как
+	(1.1) есть система первого порядка, то требуется лишь первое
+	продолжение оператора (2.1). Переход на многообразие Е осуществляется
+	просто исключением величин $u^i_0$, $p_0$, $\rho_0$ с помощью
+	\noindent (1.1), причем в полученных условиях инвариантности все оставшиеся
+	координаты точки продолженного пространства $u^i_k, \ p_k, \ \rho_k  $ являются
+	«свободными» параметрами. Так как уравнения (1.1) квазилинейны, то полное число
+	$N_n$ определяющих уравнений, получаемых после расщепления, может быть вычислено по формуле
+	5(8.1). Подсчет дает $N_1,=30,\ N_2=180$ и $N_3=680$.
 
-Для заголовка раздела использовать команду:
+	Расщепление условий инвариантности относительно «свободных» параметров приводит к следующим результатам.
+	Обращение в нуль совокупности квадратичных слагаемых равносильно выполнению равенств
 
-\razd{Система уравнений первого порядка.}\\
-В строке \verb"\setcounter{nrazd}{0}"
-вместо <<0>> поставить число на единицу меньшее первого раздела
-Вашего фрагмента текста.
+	\begin{equation} \label{eq2.2}
+		\partial_\rho \xi^\alpha = \partial_p \xi^\alpha = \partial_{u^i} \xi^\alpha = 0
+		\ \ (\alpha = 0, 1, \ldots, n; i=1,\ldots,n).
+	\end{equation}
 
-Если первое нумерованное уравнение встречается раньше заголовка
-раздела, то перед строкой\\
-\verb"\renewcommand{\theequation}{\thenrazd.\arabic{equation}}"\\
-вставить строку
-\verb"\setcounter{equation}{n}",
-где n на единицу меньше номера уравнения.
+	\noindent Обращение в нуль совокупности слагаемых первой степени равносильно выполнению равенств
 
-Индекс под символом \(\underset{1}{y}\) и индекс над символом  \(\overset{*}{t}\).
+	\begin{equation} \label{eq2.3}
+		\partial_i \xi^\alpha = 0, \ \partial_1 \xi^1 = \partial_2 \xi^2 = \ldots = \partial_n \xi^n = \lambda, \ \partial_k \xi^i + \partial_i \xi^k = 0;
+	\end{equation}
 
-Полужирный и наклонный в математических формулах: \(\bm{X}\), \bm{R}.
+	\begin{equation} \label{eq2.4}
+		\eta^i = u^k \partial_k \xi^i - u^i \partial_0 \xi^0 + \partial_0 \xi^i;
+	\end{equation}
 
-Символы неравенств: \(\leqslant\), \(\geqslant\).
+	\begin{equation} \label{eq2.5}
+		\partial_\rho \sigma = \partial_u i \sigma = 0, \ \partial_p \tau = 0, \ \tau = \rho(\partial_p \sigma + 2\partial_0 \xi^0 - 2\lambda);
+	\end{equation}
 
-Угловые скобки: \(\langle x \rangle\).
+	\begin{equation} \label{eq2.6}
+		\sigma\partial_p A + \tau\partial_\rho A = A \partial_p \sigma,
+	\end{equation}
 
-Рукописное L: \(\mathscr{L}\).
+	где введена вспомогательная функция $\lambda : X \rightarrowtail R$.
+	Наконец, оставшиеся слагаемые с нулевой степенью «свободных» параметров образуют систему
 
-\begin{lemma}
-Формулировка леммы.
-\end{lemma}
-\begin{lemman}
-Формулировка леммы.
-\end{lemman}
-
-\begin{theorema}
-Формулировка теоремы.
-\end{theorema}
-
-\begin{theoreman}
-Формулировка теоремы.
-\end{theoreman}
-
-Нумерованная формула
-$$%\begin{equation} \label{eq1.1}
-\underset{1}{y}=f(x,y),
-$$%\end{equation}
-и ссылка на эту формулу (\ref{eq1.1}).
-
-Многострочное уравнение с четным числом строк и одним номером
-(уравнения Коши-Римана):
-
-%$$\begin{equation}
-$$\begin{array}{rcl}
-u_x &=& -v_y,\\[3pt]
-v_x &=& u_y.
-\end{array}
-$$%\end{equation}
+	\begin{equation} \label{eq2.1} \left.
+		\begin{array}{r}
+			\partial_0 \eta^i + u^k \partial_k \eta^i + \rho^{-1} \partial_i \sigma = 0, \\
+			\partial_0 \tau + u^k \partial_k \tau + \rho \partial_k \eta^k = 0, \\
+			\partial_0 \sigma + u^k \partial_k \sigma + A\partial_k \eta^k = 0.
+		\end{array}
+		\right\} \end{equation}
 
 
-\newpage
-\noindent условию $\partial_p S \neq 0$, в силу которого можно ввести другую задаваемую функцию $ A: \bm{R^2 \rightarrow R}$, определяемую формулой
-
-$$ \bm{A} = -\rho\partial_p S / \partial_p S.$$
-
-В случае политропного газа эта функция равна $A = \gamma$$p$, где постоянная $\gamma$ называется показателем адиабаты. С помощью функции $A$
-последнему уравнению системы можно придать равносильную
-форму
-
-$$ d_t p + A \ div \ u = 0. $$
-
-Рассматриваемая система имеет тип $E(n+1, n+2, 1, n+2)$.
-В дальнейшем она изучается для любого натурального $n$, что
-не привносит каких-либо дополнительных усложнений по сравнению с «физическими» случаями $n = 1, 2, 3$. Вычисления ведутся
-в индивидуальных обозначениях согласно представлениям $\bm{X = R^{n+1}}$ $(t, x^1, \ldots, x^n)$ и $\bm{Y = R^{n+2}}$$ (u^1,\ldots,u^*,p,\rho)$. При этом опера-
-тор дифференцирования отображений $\bf{X \rightarrow Y}$ записывается в виде
-$\partial_x = (\partial_1, \ldots, \partial_n)$, где $\partial_0 = \partial_t$ и «материальная производная»
-дается формулой $\partial_0+u^i \partial_j$. Кроме того, первые производные обозначаются сокращенно в соответствии с равенствами
-
-$$\partial_a u^i = u^i_a, \ \ \partial_a p=p_a, \ \ \partial_a \rho=\rho_a   \ \ \ (a=0,1,\ldots,n). $$
-
-Ниже используется соглашение о том, что латинские индексы
-$i,j,k, \ldots$ принимают значения $1, \ldots, n,$ а греческие индексы
-$\alpha,\beta,\ldots$ — значения $0, 1, \ldots, n$. В этих обозначениях исследуемая система имеет вид
-
-\begin{equation} \label{eq1.1} \left.
-  \begin{array}{r}
-    u^i_0 +u^ku^i_k+\rho^-1 p_i = 0, \\
-    \rho_0 + u^k \rho_k + \rho u^k_k = 0, \\
-                p_0 + u^k p_k + Au^k_k = 0. \\
-  \end{array}
-\right\} \end{equation}
-
-Для системы (1.1), обозначаемой также символом $E(A)$, решается задача групповой классификации по отношению к произвольному элементу $A$ как функции
-$(p, \rho) \rightarrow A (p, \rho)$ в предположении, что $A \neq 0$.
-
-\razd{Определяющие уравнения.} Для координат оператора, допускаемого
-системой (1.1), также вводятся индивидуальные обозначения, а именно
-
-\begin{equation} \label{eq2.1}
-\zeta\cdot\partial=\xi^a \partial_a + \eta^i \partial_{u^i} + \sigma\partial_p + \tau\partial_\rho,
-\end{equation}
-
-\noindent где все $\xi^a, \eta^i, \sigma, \tau$ суть искомые отображения $\bm{X \times Y\rightarrow R}$.
-
-Применение изложенного в 5.8 алгоритма перехода $E \rightarrow DE$
-никаких принципиальных затруднений не встречает. Так как
-(1.1) есть система первого порядка, то требуется лишь первое
-продолжение оператора (2.1). Переход на многообразие Е осуществляется просто исключением величин $u^i_0$, $p_0$, $\rho_0$ с помощью
-\newpage
-\noindent (1.1), причем в полученных условиях инвариантности все остав-
-шиеся координаты точки продолженного пространства $u^i_k, \ p_k, \ \rho_k  $ являются «свободными» параметрами. Так как уравнения (1.1)
-квазилинейны, то полное число $N_n$ определяющих уравнений, получаемых после расщепления, может быть вычислено по формуле
-5(8.1). Подсчет дает $N_1,=30,\ N_2=180$ и $N_3=680$.
-
-Расщепление условий инвариантности относительно «свободных» параметров приводит к следующим результатам. Обращение в нуль совокупности квадратичных слагаемых равносильно
-выполнению равенств
-
-\begin{equation} \label{eq2.2}
-        \partial_\rho \xi^\alpha = \partial_p \xi^\alpha = \partial_{u^i} \xi^\alpha = 0
-        \ \ (\alpha = 0, 1, \ldots, n; i=1,\ldots,n).
-\end{equation}
-
-\noindent Обращение в нуль совокупности слагаемых первой степени равносильно выполнению равенств
-
-\begin{equation} \label{eq2.3}
-        \partial_i \xi^\alpha = 0, \ \partial_1 \xi^1 = \partial_2 \xi^2 = \ldots = \partial_n \xi^n = \lambda, \ \partial_k \xi^i + \partial_i \xi^k = 0;
-\end{equation}
-
-\begin{equation} \label{eq2.4}
-        \eta^i = u^k \partial_k \xi^i - u^i \partial_0 \xi^0 + \partial_0 \xi^i;
-\end{equation}
-
-\begin{equation} \label{eq2.5}
-        \partial_\rho \sigma = \partial_u i \sigma = 0, \ \partial_p \tau = 0, \ \tau = \rho(\partial_p \sigma + 2\partial_0 \xi^0 - 2\lambda);
-\end{equation}
-
-\begin{equation} \label{eq2.6}
-        \sigma\partial_p A + \tau\partial_\rho A = A \partial_p \sigma,
-\end{equation}
-
-где введена вспомогательная функция $\lambda : X \rightarrowtail R$. Наконец, оставшиеся слагаемые с нулевао степенью «свободных» параметров образуют систему
-
-\begin{equation} \label{eq2.1} \left.
-\begin{array}{r}
-        \partial_0 \eta^i + u^k \partial_k \eta^i + \rho^{-1} \partial_i \sigma = 0, \\
-        \partial_0 \tau + u^k \partial_k \tau + \rho \partial_k \eta^k = 0, \\
-        \partial_0 \sigma + u^k \partial_k \sigma + A\partial_k \eta^k = 0.
-\end{array}
-\right\} \end{equation}
+	Уравенения (2.2)$\--$(2.7)  образуют полную систему определяющих уравнений $DE(A)$.
 
 
-Уравенения (2.2)$\--$(2.7)  образуют полную систему определяющих уравнений $DE(A)$.
+	\razd{Ядро основых алгебр Ли.}
+	Если функция $A$ вполне произвольна, то уравнение (2.6) может быть удволетрворено только значениями
+	$\sigma = \tau = 0$. В этом случае из (2.5) следует, что $\lambda = \partial_0 \xi^0$, а уравнения (2.7) своядтся к следующим:
 
+	\begin{equation} \label{eq3.1}
+		\partial_0 \eta^i + u^k \partial_k \eta^i = 0, \ \ \partial_k \eta^k = 0.
+	\end{equation}
 
-\razd{Ядро основых алгебр Ли.}
-Если функция $A$ вполне произвольна, то уравнение (2.6) может быть удволетрворено только значениями $\sigma = \tau = 0$. В этом случае из (2.5) следует, что $\lambda = \partial_0 \xi^0$, а уравнения (2.7) своядтся к следующим:
+	Подстановка в эти уравнения выражения (2.4) и последующиее расщепление полученных равенств относительно
+	«свободными» в силу (2.2) и (2.4) параметров $u^k$ приводит к системе уравнений, содержащих только координаты $\xi^i$
 
-\begin{equation} \label{eq3.1}
-        \partial_0 \eta^i + u^k \partial_k \eta^i = 0, \ \ \partial_k \eta^k = 0.
-\end{equation}
+	\begin{equation} \label{eq3.2}
+		\partial_k \partial_j \xi^i = 0, \ \ 2\partial_k \partial_0 \xi^i = \delta^i_k \partial^2_0 \xi^0, \ \ \partial^2_0 \xi^i = 0.
+	\end{equation}
 
-Подстановка в эти уравнения выражения (2.4) и последующиее расщепление полученных равенств относительно «свободными» в силу (2.2) и (2.4) параметрво $u^k$ приводит у системе уравнений, содержащих только координаты $\xi^i$
-
-\begin{equation} \label{eq3.2}
-        \partial_k \partial_j \xi^i = 0, \ \ 2\partial_k \partial_0 \xi^i = \delta^i_k \partial^2_0 \xi^0, \ \ \partial^2_0 \xi^i = 0.
-\end{equation}
-
-Эти уравнения показывают, что все производные всторого порядка от координат $\xi^i$ равны нулю и, кроме того, $\partial^2_0 \xi^0 = 0$. Поэтому общее решение строится бех каких-либо затруднений и оказывается таким.
-
+	Эти уравнения показывают, что все производные всторого порядка от координат $\xi^i$ равны нулю и, кроме того,
+	$\partial^2_0 \xi^0 = 0$. Поэтому общее решение строится без каких-либо затруднений и оказывается таким.
 
 
 \end{document} %
