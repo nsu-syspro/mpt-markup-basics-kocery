@@ -1,0 +1,116 @@
+\documentclass{report}
+\usepackage[cp1251]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath, amssymb, latexsym}
+\usepackage{mathrsfs}
+\usepackage{fancybox,fancyhdr}
+
+\makeatletter
+\renewcommand{\section}{\@startsection
+	{section}%
+	{2}%
+	{0mm}%
+	{-\baselineskip}%
+	{0.5\baselineskip}%
+	{\normalfont\large\bfseries}}
+\makeatother
+
+\setcounter{page}{139}
+
+\setcounter{section}{7}
+\newcounter{nrazd}
+\setcounter{nrazd}{0}
+\newcommand{\razd}[1]{\addtocounter{nrazd}{1}
+	\setcounter{equation}{0}
+	\textbf{\thenrazd. #1}}
+
+\setcounter{equation}{-2}
+\renewcommand{\theequation}{\thenrazd.\arabic{equation}}
+
+
+\renewcommand{\thesection}{\S\ \arabic{section}.}
+\newcommand{\bm}[1]{\mbox{\boldmath{\(#1\)}}}
+
+
+\begin{document}
+	\razd{Определяющие уравнения.} Для координат оператора, допускаемого
+	системой (1.1), также вводятся индивидуальные обозначения, а именно
+
+	\begin{equation} \label{eq2.1}
+		\zeta\cdot\partial=\xi^a \partial_a + \eta^i \partial_{u^i} + \sigma\partial_p + \tau\partial_\rho,
+	\end{equation}
+
+	\noindent где все $\xi^a, \eta^i, \sigma, \tau$ есть искомые отображения $\bm{X \times Y\rightarrow R}$.
+
+	Применение изложенного в 5.8 алгоритма перехода $E \rightarrow DE$
+	никаких принципиальных затруднений не встречает. Так как
+	(1.1) есть система первого порядка, то требуется лишь первое
+	продолжение оператора (2.1). Переход на многообразие Е осуществляется
+	просто исключением величин $u^i_0$, $p_0$, $\rho_0$ с помощью
+	\noindent (1.1), причем в полученных условиях инвариантности все оставшиеся
+	координаты точки продолженного пространства $u^i_k, \ p_k, \ \rho_k  $ являются
+	«свободными» параметрами. Так как уравнения (1.1) квазилинейны, то полное число
+	$N_n$ определяющих уравнений, получаемых после расщепления, может быть вычислено по формуле
+	5(8.1). Подсчет дает $N_1,=30,\ N_2=180$ и $N_3=680$.
+
+	Расщепление условий инвариантности относительно «свободных» параметров приводит к следующим результатам.
+	Обращение в нуль совокупности квадратичных слагаемых равносильно выполнению равенств
+
+	\begin{equation} \label{eq2.2}
+		\partial_\rho \xi^\alpha = \partial_p \xi^\alpha = \partial_{u^i} \xi^\alpha = 0
+		\ \ (\alpha = 0, 1, \ldots, n; i=1,\ldots,n).
+	\end{equation}
+
+	\noindent Обращение в нуль совокупности слагаемых первой степени равносильно выполнению равенств
+
+	\begin{equation} \label{eq2.3}
+		\partial_i \xi^\alpha = 0, \ \partial_1 \xi^1 = \partial_2 \xi^2 = \ldots = \partial_n \xi^n = \lambda, \ \partial_k \xi^i + \partial_i \xi^k = 0;
+	\end{equation}
+
+	\begin{equation} \label{eq2.4}
+		\eta^i = u^k \partial_k \xi^i - u^i \partial_0 \xi^0 + \partial_0 \xi^i;
+	\end{equation}
+
+	\begin{equation} \label{eq2.5}
+		\partial_\rho \sigma = \partial_u i \sigma = 0, \ \partial_p \tau = 0, \ \tau = \rho(\partial_p \sigma + 2\partial_0 \xi^0 - 2\lambda);
+	\end{equation}
+
+	\begin{equation} \label{eq2.6}
+		\sigma\partial_p A + \tau\partial_\rho A = A \partial_p \sigma,
+	\end{equation}
+
+	где введена вспомогательная функция $\lambda : X \rightarrowtail R$.
+	Наконец, оставшиеся слагаемые с нулевой степенью «свободных» параметров образуют систему
+
+	\begin{equation} \label{eq2.1} \left.
+		\begin{array}{r}
+			\partial_0 \eta^i + u^k \partial_k \eta^i + \rho^{-1} \partial_i \sigma = 0, \\
+			\partial_0 \tau + u^k \partial_k \tau + \rho \partial_k \eta^k = 0, \\
+			\partial_0 \sigma + u^k \partial_k \sigma + A\partial_k \eta^k = 0.
+		\end{array}
+		\right\} \end{equation}
+
+
+	Уравенения (2.2)$\--$(2.7)  образуют полную систему определяющих уравнений $DE(A)$.
+
+
+	\razd{Ядро основых алгебр Ли.}
+	Если функция $A$ вполне произвольна, то уравнение (2.6) может быть удволетрворено только значениями
+	$\sigma = \tau = 0$. В этом случае из (2.5) следует, что $\lambda = \partial_0 \xi^0$, а уравнения (2.7) своядтся к следующим:
+
+	\begin{equation} \label{eq3.1}
+		\partial_0 \eta^i + u^k \partial_k \eta^i = 0, \ \ \partial_k \eta^k = 0.
+	\end{equation}
+
+	Подстановка в эти уравнения выражения (2.4) и последующиее расщепление полученных равенств относительно
+	«свободными» в силу (2.2) и (2.4) параметров $u^k$ приводит к системе уравнений, содержащих только координаты $\xi^i$
+
+	\begin{equation} \label{eq3.2}
+		\partial_k \partial_j \xi^i = 0, \ \ 2\partial_k \partial_0 \xi^i = \delta^i_k \partial^2_0 \xi^0, \ \ \partial^2_0 \xi^i = 0.
+	\end{equation}
+
+	Эти уравнения показывают, что все производные всторого порядка от координат $\xi^i$ равны нулю и, кроме того,
+	$\partial^2_0 \xi^0 = 0$. Поэтому общее решение строится без каких-либо затруднений и оказывается таким.
+
+
+\end{document} %
